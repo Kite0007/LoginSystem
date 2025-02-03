@@ -10,7 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO users (name, email, password, otp) VALUES ('$name', '$email', '$password', '$otp')";
     
     if ($conn->query($sql) === TRUE) {
-        mail($email, "OTP Verification", "Your OTP code is: $otp");
+        // Send OTP via email
+        include 'send_otp.php';
+        sendOTP($email, $otp);
         header("Location: ../otp.html");
     } else {
         echo "Error: " . $conn->error;
