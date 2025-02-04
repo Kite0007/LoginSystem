@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';  // Corrected path
 
 function sendOTP($email, $otp) {
     $mail = new PHPMailer(true);
@@ -12,13 +12,13 @@ function sendOTP($email, $otp) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; // SMTP server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'your-email@gmail.com'; // Your Gmail address
-        $mail->Password   = 'your-email-password';  // Your Gmail password
+        $mail->Username   = 'evangelistajerico70@gmail.com'; // Your Gmail address
+        $mail->Password   = 'Jitsu@211984@07@2003';  // Your Gmail password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom('your-email@gmail.com', 'Your Name');
+        $mail->setFrom('evangelistajerico70@gmail.com', 'Jitsu Bull');
         $mail->addAddress($email);
 
         // Content
