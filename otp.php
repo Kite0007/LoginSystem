@@ -11,7 +11,8 @@
 <body>
     <div class="form-box">
         <h2>OTP Verification</h2>
-        <form action="php/otp_verification.php" method="POST">
+        <p>Please enter the OTP sent to your email.</p>
+        <form action="php/otp_verification.php<?php if (isset($_GET['email'])) echo '?email=' . htmlspecialchars($_GET['email']); ?>" method="POST">
             <input type="text" name="otp" placeholder="Enter OTP" required>
             <button type="submit">Submit</button>
         </form>
