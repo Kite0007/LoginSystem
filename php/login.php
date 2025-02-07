@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include 'db_connect.php'; // diko alam ilalagay dito
 session_start(); // Start the session
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
